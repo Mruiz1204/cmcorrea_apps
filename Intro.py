@@ -56,23 +56,32 @@ foto = foto_base64(FOTO)
 # PROYECTOS
 # ─────────────────────────────────────────────
 proyectos = [
-    {"n": "Análisis de Imagen", "cat": "Visión", "txt": "Interpreta una fotografía con GPT-4o y la describe con lenguaje natural.", "link": "https://vision2-0909.streamlit.app/"},
-    {"n": "Reconocimiento de Objetos", "cat": "Visión", "txt": "Detección de objetos en imágenes mediante el modelo YOLOv5.", "link": "https://yolov5-909090.streamlit.app/"},
-    {"n": "Reconocimiento de Caracteres", "cat": "Visión", "txt": "Extrae el texto contenido en una fotografía (OCR) para copiarlo.", "link": "https://ixw43qkktp7a2ecnrxjm4v.streamlit.app/"},
-    {"n": "Chat con PDF", "cat": "Texto", "txt": "Formula preguntas sobre un documento PDF mediante recuperación aumentada (RAG).", "link": "https://chatpdf909.streamlit.app/"},
-    {"n": "Word Cloud", "cat": "Texto", "txt": "Visualiza la frecuencia léxica de un texto como una nube de palabras.", "link": "https://wordcloud-0909.streamlit.app/"},
-    {"n": "Análisis de Sentimientos", "cat": "Texto", "txt": "Clasifica la polaridad de un texto: positivo, negativo o neutral.", "link": "https://sentimenta-9a0909.streamlit.app/"},
-    {"n": "Texto a Audio", "cat": "Voz", "txt": "Convierte cualquier texto escrito en voz sintetizada.", "link": "https://textoaaudio90909090.streamlit.app/"},
-    {"n": "Traductor de Voz", "cat": "Voz", "txt": "Captura la voz, la traduce a otro idioma y la reproduce en audio.", "link": "https://traductor-09090.streamlit.app/"},
-    {"n": "OCR con Audio", "cat": "Voz", "txt": "Lee el texto de una imagen, lo traduce y lo narra en voz alta.", "link": "https://ocr-audio-dobai8kn64czzbuavjqojz.streamlit.app/"},
-    {"n": "Análisis de Datos", "cat": "Datos", "txt": "Carga un CSV o Excel y consulta tus datos con un asistente de IA.", "link": "https://dataagent-0809.streamlit.app/"},
-    {"n": "Mi Primera App", "cat": "Inicio", "txt": "El punto de partida de este recorrido por Streamlit.", "link": "https://ejfbdohiqmyjutvlcdpnlv.streamlit.app/"},
-    {"n": "Entrenando Modelos", "cat": "Visión", "txt": "Clasificación de imágenes con un modelo entrenado en Teachable Machine.", "link": ""},
-    {"n": "Transcriptor de Audio y Video", "cat": "Voz", "txt": "Transcribe automáticamente el contenido de archivos de audio y video.", "link": ""},
-    {"n": "TF-IDF", "cat": "Texto", "txt": "Identifica los términos más relevantes dentro de un conjunto de textos.", "link": ""},
-    {"n": "Predicción de Números", "cat": "Visión", "txt": "Reconoce dígitos manuscritos con un modelo entrenado sobre MNIST.", "link": ""},
-    {"n": "Aplicación Multipágina", "cat": "Inicio", "txt": "Navegación entre múltiples páginas con menú lateral.", "link": ""},
+    {"n": "Análisis de Imagen", "cat": "Visión", "ic": "🖼", "txt": "Interpreta una fotografía con GPT-4o y la describe con lenguaje natural.", "link": "https://vision2-0909.streamlit.app/"},
+    {"n": "Reconocimiento de Objetos", "cat": "Visión", "ic": "🎯", "txt": "Detección de objetos en imágenes mediante el modelo YOLOv5.", "link": "https://yolov5-909090.streamlit.app/"},
+    {"n": "Reconocimiento de Caracteres", "cat": "Visión", "ic": "🔤", "txt": "Extrae el texto contenido en una fotografía (OCR) para copiarlo.", "link": "https://ixw43qkktp7a2ecnrxjm4v.streamlit.app/"},
+    {"n": "Chat con PDF", "cat": "Texto", "ic": "📄", "txt": "Formula preguntas sobre un documento PDF mediante recuperación aumentada (RAG).", "link": "https://chatpdf909.streamlit.app/"},
+    {"n": "Word Cloud", "cat": "Texto", "ic": "☁", "txt": "Visualiza la frecuencia léxica de un texto como una nube de palabras.", "link": "https://wordcloud-0909.streamlit.app/"},
+    {"n": "Análisis de Sentimientos", "cat": "Texto", "ic": "💬", "txt": "Clasifica la polaridad de un texto: positivo, negativo o neutral.", "link": "https://sentimenta-9a0909.streamlit.app/"},
+    {"n": "Texto a Audio", "cat": "Voz", "ic": "🔊", "txt": "Convierte cualquier texto escrito en voz sintetizada.", "link": "https://textoaaudio90909090.streamlit.app/"},
+    {"n": "Traductor de Voz", "cat": "Voz", "ic": "🌐", "txt": "Captura la voz, la traduce a otro idioma y la reproduce en audio.", "link": "https://traductor-09090.streamlit.app/"},
+    {"n": "OCR con Audio", "cat": "Voz", "ic": "🎧", "txt": "Lee el texto de una imagen, lo traduce y lo narra en voz alta.", "link": "https://ocr-audio-dobai8kn64czzbuavjqojz.streamlit.app/"},
+    {"n": "Análisis de Datos", "cat": "Datos", "ic": "📊", "txt": "Carga un CSV o Excel y consulta tus datos con un asistente de IA.", "link": "https://dataagent-0809.streamlit.app/"},
+    {"n": "Mi Primera App", "cat": "Inicio", "ic": "🚀", "txt": "El punto de partida de este recorrido por Streamlit.", "link": "https://ejfbdohiqmyjutvlcdpnlv.streamlit.app/"},
+    {"n": "Entrenando Modelos", "cat": "Visión", "ic": "🧠", "txt": "Clasificación de imágenes con un modelo entrenado en Teachable Machine.", "link": ""},
+    {"n": "Transcriptor de Audio y Video", "cat": "Voz", "ic": "🎬", "txt": "Transcribe automáticamente el contenido de archivos de audio y video.", "link": ""},
+    {"n": "TF-IDF", "cat": "Texto", "ic": "📚", "txt": "Identifica los términos más relevantes dentro de un conjunto de textos.", "link": ""},
+    {"n": "Predicción de Números", "cat": "Visión", "ic": "🔢", "txt": "Reconoce dígitos manuscritos con un modelo entrenado sobre MNIST.", "link": ""},
+    {"n": "Aplicación Multipágina", "cat": "Inicio", "ic": "🗂", "txt": "Navegación entre múltiples páginas con menú lateral.", "link": ""},
 ]
+
+# Color de acento por categoría (dentro de la familia de la marca)
+COLOR_CAT = {
+    "Inicio": "#f2cc8f",   # ámbar
+    "Visión": "#e3785c",   # terracota
+    "Texto":  "#7bb0a8",   # verde agua apagado
+    "Voz":    "#c58fb0",   # malva apagado
+    "Datos":  "#8fb3d9",   # azul claro
+}
 
 
 # ─────────────────────────────────────────────
@@ -210,66 +219,85 @@ html("""
         letter-spacing: 1px;
     }
 
-    /* ───── Entrada de proyecto: fila editorial ───── */
+    /* ───── Tarjeta de proyecto (box) ───── */
     .obra {
         display: grid;
-        grid-template-columns: 70px 1fr auto;
-        gap: 22px;
-        align-items: center;
-        padding: 22px 6px;
-        border-bottom: 1px solid var(--line);
-        transition: background 0.25s ease, padding-left 0.25s ease;
+        grid-template-columns: 96px 1fr;
+        gap: 18px;
+        align-items: stretch;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        overflow: hidden;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        height: 100%;
     }
     .obra:hover {
-        background: var(--panel);
-        padding-left: 18px;
+        transform: translateY(-5px);
+        box-shadow: 0 16px 34px rgba(0,0,0,0.4);
+        border-color: var(--cat);
     }
-    .obra .idx {
-        font-family: 'Fraunces', serif;
-        font-size: 2.4rem;
+    /* Miniatura de color con el ícono (la identidad visual de cada app) */
+    .obra .mini {
+        background:
+            radial-gradient(circle at 30% 25%, rgba(255,255,255,0.14), transparent 60%),
+            var(--cat);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.3rem;
+        position: relative;
+    }
+    .obra .mini .numero {
+        position: absolute;
+        top: 6px; left: 8px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.62rem;
+        color: rgba(17,39,47,0.75);
         font-weight: 600;
-        color: var(--terra);
-        line-height: 1;
-        opacity: 0.85;
+    }
+    .obra .cuerpo {
+        padding: 16px 16px 14px 2px;
+        display: flex;
+        flex-direction: column;
+    }
+    .obra .cuerpo .tag {
+        align-self: flex-start;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.6rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--cat);
+        border: 1px solid var(--cat);
+        border-radius: 999px;
+        padding: 2px 10px;
+        margin-bottom: 8px;
     }
     .obra .cuerpo .nom {
         font-family: 'Fraunces', serif;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         font-weight: 600;
         color: var(--ink);
-        line-height: 1.1;
+        line-height: 1.12;
     }
     .obra .cuerpo .dsc {
-        font-size: 0.92rem;
+        font-size: 0.85rem;
         color: var(--mute);
-        line-height: 1.55;
-        margin-top: 5px;
-        max-width: 620px;
-    }
-    .obra .cuerpo .tag {
-        display: inline-block;
-        margin-top: 9px;
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 0.64rem;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        color: var(--ambar);
-        border: 1px solid var(--line);
-        border-radius: 2px;
-        padding: 2px 8px;
+        line-height: 1.5;
+        margin-top: 6px;
     }
 
-    /* ───── Botones de link (lado derecho de cada obra) ───── */
+    /* ───── Botones ───── */
     [data-testid="stLinkButton"] a, .stLinkButton a {
         background: transparent !important;
         color: var(--terra) !important;
         border: 1px solid var(--terra) !important;
-        border-radius: 2px !important;
+        border-radius: 999px !important;
         font-family: 'JetBrains Mono', monospace !important;
-        font-size: 0.74rem !important;
+        font-size: 0.72rem !important;
         letter-spacing: 1px !important;
         text-transform: uppercase;
-        padding: 8px 18px !important;
+        padding: 7px 16px !important;
         transition: all 0.2s ease !important;
     }
     [data-testid="stLinkButton"] a:hover, .stLinkButton a:hover {
@@ -280,9 +308,9 @@ html("""
         background: transparent !important;
         color: var(--mute) !important;
         border: 1px dashed var(--line) !important;
-        border-radius: 2px !important;
+        border-radius: 999px !important;
         font-family: 'JetBrains Mono', monospace !important;
-        font-size: 0.74rem !important;
+        font-size: 0.72rem !important;
         letter-spacing: 1px !important;
         text-transform: uppercase;
     }
@@ -347,46 +375,52 @@ html(f"""
 
 
 # ─────────────────────────────────────────────
-# PROYECTOS AGRUPADOS POR SECCIÓN
+# FILTRO POR CATEGORÍA
 # ─────────────────────────────────────────────
-ORDEN = ["Inicio", "Visión", "Texto", "Voz", "Datos"]
-ROMANOS = {"Inicio": "I", "Visión": "II", "Texto": "III", "Voz": "IV", "Datos": "V"}
+html("""
+<div class="sec">
+    <span class="rom">—</span>
+    <h2>Proyectos</h2>
+    <span class="cuenta">filtra por categoría</span>
+</div>
+""")
 
-contador = 0
-for cat in ORDEN:
-    delcat = [p for p in proyectos if p["cat"] == cat]
-    if not delcat:
-        continue
+CATS = ["Todas", "Inicio", "Visión", "Texto", "Voz", "Datos"]
+filtro = st.radio("Filtrar", CATS, horizontal=True, label_visibility="collapsed")
 
-    html(f"""
-    <div class="sec">
-        <span class="rom">{ROMANOS.get(cat, '·')}</span>
-        <h2>{cat}</h2>
-        <span class="cuenta">{len(delcat):02d} proyecto(s)</span>
-    </div>
-    """)
+visibles = [(i, p) for i, p in enumerate(proyectos, start=1)
+            if filtro == "Todas" or p["cat"] == filtro]
 
-    for p in delcat:
-        contador += 1
-        c_txt, c_acc = st.columns([0.80, 0.20], gap="small")
-        with c_txt:
+st.write("")
+
+
+# ─────────────────────────────────────────────
+# TARJETAS (2 por fila, cada una con su miniatura de color)
+# ─────────────────────────────────────────────
+POR_FILA = 2
+for inicio in range(0, len(visibles), POR_FILA):
+    cols = st.columns(POR_FILA, gap="medium")
+    for col, (num, p) in zip(cols, visibles[inicio:inicio + POR_FILA]):
+        color = COLOR_CAT.get(p["cat"], "#e3785c")
+        with col:
             html(f"""
-            <div class="obra" style="border:none; padding-bottom:0;">
-                <div class="idx">{contador:02d}</div>
+            <div class="obra" style="--cat:{color};">
+                <div class="mini">
+                    <span class="numero">{num:02d}</span>
+                    {p['ic']}
+                </div>
                 <div class="cuerpo">
+                    <span class="tag">{p['cat']}</span>
                     <div class="nom">{p['n']}</div>
                     <div class="dsc">{p['txt']}</div>
-                    <span class="tag">{p['cat']}</span>
                 </div>
             </div>
             """)
-        with c_acc:
-            st.write("")
             if p["link"]:
-                st.link_button("Ver ↗", p["link"], use_container_width=True)
+                st.link_button("Abrir proyecto ↗", p["link"], use_container_width=True)
             else:
-                st.button("En proceso", key=f"p{contador}", disabled=True, use_container_width=True)
-        html('<div style="border-bottom:1px solid var(--line);"></div>')
+                st.button("En proceso", key=f"p{num}", disabled=True, use_container_width=True)
+            st.write("")
 
 
 # ─────────────────────────────────────────────
