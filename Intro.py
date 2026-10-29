@@ -67,11 +67,8 @@ proyectos = [
     {"n": "OCR con Audio", "cat": "Voz", "ic": "🎧", "txt": "Lee el texto de una imagen, lo traduce y lo narra en voz alta.", "link": "https://ocr-audio-dobai8kn64czzbuavjqojz.streamlit.app/"},
     {"n": "Análisis de Datos", "cat": "Datos", "ic": "📊", "txt": "Carga un CSV o Excel y consulta tus datos con un asistente de IA.", "link": "https://dataagent-0809.streamlit.app/"},
     {"n": "Mi Primera App", "cat": "Inicio", "ic": "🚀", "txt": "El punto de partida de este recorrido por Streamlit.", "link": "https://ejfbdohiqmyjutvlcdpnlv.streamlit.app/"},
-    {"n": "Entrenando Modelos", "cat": "Visión", "ic": "🧠", "txt": "Clasificación de imágenes con un modelo entrenado en Teachable Machine.", "link": ""},
-    {"n": "Transcriptor de Audio y Video", "cat": "Voz", "ic": "🎬", "txt": "Transcribe automáticamente el contenido de archivos de audio y video.", "link": ""},
-    {"n": "TF-IDF", "cat": "Texto", "ic": "📚", "txt": "Identifica los términos más relevantes dentro de un conjunto de textos.", "link": ""},
-    {"n": "Predicción de Números", "cat": "Visión", "ic": "🔢", "txt": "Reconoce dígitos manuscritos con un modelo entrenado sobre MNIST.", "link": ""},
-    {"n": "Aplicación Multipágina", "cat": "Inicio", "ic": "🗂", "txt": "Navegación entre múltiples páginas con menú lateral.", "link": ""},
+    {"n": "Predicción de Números", "cat": "Visión", "ic": "🔢", "txt": "Reconoce dígitos manuscritos con una red neuronal entrenada sobre MNIST.", "link": "https://mnistpred-09090.streamlit.app/"},
+    {"n": "Tablero Inteligente", "cat": "Visión", "ic": "🎨", "txt": "Dibuja un boceto y la IA interpreta y describe lo que ve.", "link": "https://drawrecog-09090.streamlit.app/"},
 ]
 
 # Color de acento por categoría (dentro de la familia de la marca)
@@ -363,7 +360,7 @@ html(f"""
         <div class="lede">
             Una recopilación de los proyectos que construí en clase con Python y Streamlit:
             visión por computadora, procesamiento de texto, voz y análisis de datos.
-            {online} de {total} proyectos están en línea; el resto, en producción.
+            {total} aplicaciones, todas en línea y listas para probar.
         </div>
     </div>
     <div class="retrato">
