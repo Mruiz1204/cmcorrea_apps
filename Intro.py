@@ -42,12 +42,18 @@ st.markdown(
         margin-top: 0;
     }
     .tarjeta {
-        background: #12303a;
-        border: 1px solid #2a4b57;
-        border-radius: 14px;
-        padding: 14px;
+        background: #1d3f4e;
+        border: 1px solid rgba(242,204,143,0.15);
+        border-radius: 16px;
+        padding: 18px;
         margin-bottom: 18px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+        box-shadow: 0 6px 22px rgba(0,0,0,0.25);
+        transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+    .tarjeta:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.33);
+        border-color: rgba(224,122,95,0.5);
     }
     a { color: #e07a5f !important; font-weight: 600; }
     </style>
