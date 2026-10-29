@@ -5,7 +5,11 @@ from PIL import Image
 #  Portafolio de Aplicaciones de IA — Miguel Ruiz
 #  Paleta: azul petróleo / terracota / ámbar
 # =========================================================
-st.set_page_config(page_title="Portafolio IA · Miguel Ruiz", page_icon="📄", layout="wide")
+try:
+    _icon = Image.open('logo_mr.png')
+except Exception:
+    _icon = "📄"
+st.set_page_config(page_title="Portafolio IA · Miguel Ruiz", page_icon=_icon, layout="wide")
 
 # ---- Estilo personalizado ----
 st.markdown(
