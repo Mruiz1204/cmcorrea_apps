@@ -22,6 +22,8 @@ st.markdown(
         color: #e8eef0;
         font-family: 'Inter', sans-serif;
     }
+    [data-testid="stHeader"] { background: transparent !important; }
+    [data-testid="stToolbar"] { right: 1rem; }
     h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: #e07a5f; }
     section[data-testid="stSidebar"] { background: #12272f; }
 
