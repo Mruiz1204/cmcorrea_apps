@@ -55,6 +55,10 @@ foto = foto_base64(FOTO)
 # ─────────────────────────────────────────────
 # PROYECTOS
 # ─────────────────────────────────────────────
+# Links pendientes de confirmar (vacío = la tarjeta muestra "En proceso" o no muestra el botón extra)
+BOCETO_LINK = ""
+CERRADURA_WOKWI = ""
+
 proyectos = [
     {"n": "Análisis de Imagen", "cat": "Visión", "ic": "🖼", "txt": "Interpreta una fotografía con GPT-4o y la describe con lenguaje natural.", "link": "https://vision2-0909.streamlit.app/"},
     {"n": "Reconocimiento de Objetos", "cat": "Visión", "ic": "🎯", "txt": "Detección de objetos en imágenes mediante el modelo YOLOv5.", "link": "https://yolov5-909090.streamlit.app/"},
@@ -69,6 +73,11 @@ proyectos = [
     {"n": "Mi Primera App", "cat": "Inicio", "ic": "🚀", "txt": "El punto de partida de este recorrido por Streamlit.", "link": "https://ejfbdohiqmyjutvlcdpnlv.streamlit.app/"},
     {"n": "Predicción de Números", "cat": "Visión", "ic": "🔢", "txt": "Reconoce dígitos manuscritos con una red neuronal entrenada sobre MNIST.", "link": "https://mnistpred-09090.streamlit.app/"},
     {"n": "Tablero Inteligente", "cat": "Visión", "ic": "🎨", "txt": "Dibuja un boceto y la IA interpreta y describe lo que ve.", "link": "https://drawrecog-09090.streamlit.app/"},
+    {"n": "Boceto a Interfaz", "cat": "Visión", "ic": "✏️", "txt": "Proyecto propio: dibujas el wireframe de una pantalla y la IA lo convierte en un prototipo HTML que puedes refinar por versiones.", "link": BOCETO_LINK, "sello": "Proyecto propio · v2.0"},
+    {"n": "Control por Voz", "cat": "IoT", "ic": "🎙️", "txt": "Habla un comando y un ESP32 en Wokwi enciende las luces o abre la puerta por MQTT.", "link": "https://ctrlvoice-kkeyzlctgfgnvlwtdoksc3.streamlit.app/", "extra": ("Simulación Wokwi", "https://wokwi.com/projects/479808432241260545")},
+    {"n": "Control MQTT", "cat": "IoT", "ic": "📡", "txt": "App de dos páginas: controla el mismo circuito por voz o con botones ON/OFF y un slider para el servo.", "link": "https://control-mqtt-lex5bfkk3cpcfnubjjufwb.streamlit.app/", "extra": ("Simulación Wokwi", "https://wokwi.com/projects/479808432241260545")},
+    {"n": "Visión Combinada", "cat": "Visión", "ic": "👁️", "txt": "Clasifica imágenes con un modelo de Teachable Machine y detecta objetos con YOLO, en una sola app.", "link": "https://vision-combinada-0909909.streamlit.app/"},
+    {"n": "Cerradura por Gestos", "cat": "IoT", "ic": "🔐", "txt": "Un gesto frente a la cámara, reconocido con Teachable Machine, abre o cierra una cerradura en Wokwi.", "link": "https://cerradura-gestos-09090909.streamlit.app/", "extra": ("Simulación Wokwi", CERRADURA_WOKWI)},
 ]
 
 # Color de acento por categoría (dentro de la familia de la marca)
@@ -78,6 +87,7 @@ COLOR_CAT = {
     "Texto":  "#7bb0a8",   # verde agua apagado
     "Voz":    "#c58fb0",   # malva apagado
     "Datos":  "#8fb3d9",   # azul claro
+    "IoT":    "#a8c686",   # verde salvia
 }
 
 
@@ -258,6 +268,17 @@ html("""
         display: flex;
         flex-direction: column;
     }
+    .obra .cuerpo .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+    .obra .cuerpo .sello {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.6rem;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        color: var(--bg);
+        background: var(--ambar);
+        border-radius: 999px;
+        padding: 2px 10px;
+    }
     .obra .cuerpo .tag {
         align-self: flex-start;
         font-family: 'JetBrains Mono', monospace;
@@ -268,7 +289,6 @@ html("""
         border: 1px solid var(--cat);
         border-radius: 999px;
         padding: 2px 10px;
-        margin-bottom: 8px;
     }
     .obra .cuerpo .nom {
         font-family: 'Fraunces', serif;
@@ -359,8 +379,8 @@ html(f"""
         <h1>Aplicaciones<br>de <em>IA</em>.</h1>
         <div class="lede">
             Una recopilación de los proyectos que construí en clase con Python y Streamlit:
-            visión por computadora, procesamiento de texto, voz y análisis de datos.
-            {total} aplicaciones, todas en línea y listas para probar.
+            visión por computadora, procesamiento de texto, voz, análisis de datos e
+            internet de las cosas con circuitos simulados en Wokwi. {total} aplicaciones listas para probar.
         </div>
     </div>
     <div class="retrato">
@@ -382,7 +402,7 @@ html("""
 </div>
 """)
 
-CATS = ["Todas", "Inicio", "Visión", "Texto", "Voz", "Datos"]
+CATS = ["Todas", "Inicio", "Visión", "Texto", "Voz", "Datos", "IoT"]
 filtro = st.radio("Filtrar", CATS, horizontal=True, label_visibility="collapsed")
 
 visibles = [(i, p) for i, p in enumerate(proyectos, start=1)
@@ -399,6 +419,7 @@ for inicio in range(0, len(visibles), POR_FILA):
     cols = st.columns(POR_FILA, gap="medium")
     for col, (num, p) in zip(cols, visibles[inicio:inicio + POR_FILA]):
         color = COLOR_CAT.get(p["cat"], "#e3785c")
+        sello = f'<span class="sello">{p["sello"]}</span>' if p.get("sello") else ""
         with col:
             html(f"""
             <div class="obra" style="--cat:{color};">
@@ -407,16 +428,25 @@ for inicio in range(0, len(visibles), POR_FILA):
                     {p['ic']}
                 </div>
                 <div class="cuerpo">
-                    <span class="tag">{p['cat']}</span>
+                    <div class="tags"><span class="tag">{p['cat']}</span>{sello}</div>
                     <div class="nom">{p['n']}</div>
                     <div class="dsc">{p['txt']}</div>
                 </div>
             </div>
             """)
-            if p["link"]:
-                st.link_button("Abrir proyecto ↗", p["link"], use_container_width=True)
+            extra = p.get("extra")
+            if extra and extra[1]:
+                b1, b2 = st.columns([1.3, 1])
             else:
-                st.button("En proceso", key=f"p{num}", disabled=True, use_container_width=True)
+                b1, b2 = st.container(), None
+            with b1:
+                if p["link"]:
+                    st.link_button("Abrir proyecto ↗", p["link"], use_container_width=True)
+                else:
+                    st.button("En proceso", key=f"p{num}", disabled=True, use_container_width=True)
+            if b2 is not None:
+                with b2:
+                    st.link_button(f"{extra[0]} ↗", extra[1], use_container_width=True)
             st.write("")
 
 
