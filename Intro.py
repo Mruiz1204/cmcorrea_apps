@@ -41,7 +41,7 @@ def foto_base64(ruta):
     try:
         img = Image.open(ruta)
         img = ImageOps.exif_transpose(img).convert("RGB")
-        img = ImageOps.fit(img, (640, 800), Image.Resampling.LANCZOS)  # proporción editorial 4:5
+        img = ImageOps.fit(img, (640, 800), Image.Resampling.LANCZOS, centering=(0.5, 0.2))  # 4:5, sin cortar el pelo
         buf = io.BytesIO()
         img.save(buf, format="JPEG", quality=90)
         return base64.b64encode(buf.getvalue()).decode()
